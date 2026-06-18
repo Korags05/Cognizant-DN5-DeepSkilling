@@ -6,8 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Week1_Design_Patterns" />
+        <module name="Week1" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Week2_DSA" target="22" />
+    </bytecodeTargetLevel>
   </component>
 </project>
