@@ -7,9 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Week1" />
+        <module name="TDD_Loggin_Week1" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Week1" target="22" />
       <module name="Week2_DSA" target="22" />
     </bytecodeTargetLevel>
   </component>
