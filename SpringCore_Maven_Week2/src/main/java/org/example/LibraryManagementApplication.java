@@ -12,7 +12,8 @@ public class LibraryManagementApplication {
         ApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationContext.xml");
 
-        BookService service = (BookService) context.getBean("bookService");
+        BookService service =
+                context.getBean("bookService", BookService.class);
 
         service.serviceMethod();
     }
