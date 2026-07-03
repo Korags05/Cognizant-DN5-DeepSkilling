@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Week1" />
         <module name="TDD_Loggin_Week1" />
+        <module name="SpringCore_Maven_Week2" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
