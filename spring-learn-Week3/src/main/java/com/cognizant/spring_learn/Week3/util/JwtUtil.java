@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class JwtUtil {
-
+ 
     private static final String SECRET =
             "mySuperSecretKeyForJwtSigning123456";
 
