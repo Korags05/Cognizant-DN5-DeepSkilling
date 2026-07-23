@@ -1,8 +1,10 @@
 import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
-
+import { CommonModule } from '@angular/common';
+import { Highlight } from '../../directives/highlight';
+import { CreditLabelPipe } from '../../pipes/credit-label-pipe';
 @Component({
   selector: 'app-course-card',
-  imports: [],
+  imports: [CommonModule, Highlight, CreditLabelPipe],
   templateUrl: './course-card.html',
   styleUrl: './course-card.css',
 })
@@ -13,6 +15,7 @@ export class CourseCard implements OnChanges {
     name: string;
     code: string;
     credits: number;
+    gradeStatus: string;
   };
 
   @Output()

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CourseCard } from '../../components/course-card/course-card';
 import { CommonModule } from '@angular/common';
+import { OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-course-list',
@@ -8,13 +9,14 @@ import { CommonModule } from '@angular/common';
   templateUrl: './course-list.html',
   styleUrl: './course-list.css',
 })
-export class CourseList {
+export class CourseList implements OnInit {
   courses = [
     {
       id: 1,
       name: 'Angular',
       code: 'CS101',
       credits: 4,
+      gradeStatus: 'passed',
     },
 
     {
@@ -22,6 +24,7 @@ export class CourseList {
       name: 'Java',
       code: 'CS102',
       credits: 3,
+      gradeStatus: 'failed',
     },
 
     {
@@ -29,6 +32,7 @@ export class CourseList {
       name: 'Spring Boot',
       code: 'CS103',
       credits: 4,
+      gradeStatus: 'pending',
     },
 
     {
@@ -36,6 +40,7 @@ export class CourseList {
       name: 'Database',
       code: 'CS104',
       credits: 3,
+      gradeStatus: 'pending',
     },
 
     {
@@ -43,6 +48,7 @@ export class CourseList {
       name: 'Operating System',
       code: 'CS105',
       credits: 4,
+      gradeStatus: 'pending',
     },
   ];
 
@@ -52,5 +58,12 @@ export class CourseList {
     console.log('Enrolling in', id);
 
     this.selectedCourseId = id;
+  }
+  isLoading = true;
+
+  ngOnInit() {
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 1500);
   }
 }

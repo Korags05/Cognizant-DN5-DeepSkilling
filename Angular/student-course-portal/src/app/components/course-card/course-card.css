@@ -1,0 +1,22 @@
+.card{
+
+  padding:15px;
+
+  border:1px solid gray;
+
+  margin-bottom:20px;
+
+}
+
+.card--full{
+
+  border-left:8px solid red;
+
+}
+
+.card--enrolled{
+
+  background:#d4edda;
+
+}
+
