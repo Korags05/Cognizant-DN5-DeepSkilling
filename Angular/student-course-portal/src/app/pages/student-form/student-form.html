@@ -1,0 +1,90 @@
+<h2>Student Registration</h2>
+
+<form [formGroup]="studentForm"
+      (ngSubmit)="submit()">
+
+  <label>Name</label>
+
+  <br>
+
+  <input
+    type="text"
+    formControlName="name">
+  @if(studentForm.controls.name.invalid &&
+  studentForm.controls.name.touched){
+
+    <p style="color:red">
+
+      Name is required (minimum 3 characters)
+
+    </p>
+
+  }
+
+  <br><br>
+
+  <label>Email</label>
+
+  <br>
+
+  <input
+    type="email"
+    formControlName="email">
+  @if(studentForm.controls.email.invalid &&
+  studentForm.controls.email.touched){
+
+    <p style="color:red">
+
+      Enter a valid email
+
+    </p>
+
+  }
+
+  <br><br>
+
+  <label>Age</label>
+
+  <br>
+
+  <input
+    type="number"
+    formControlName="age">
+  @if(studentForm.controls.age.invalid &&
+  studentForm.controls.age.touched){
+
+    <p style="color:red">
+
+      Age must be at least 18
+
+    </p>
+
+  }
+
+  <br><br>
+  <br>
+  <input
+    type="text"
+    formControlName="phoneNumber">
+  @if(studentForm.controls.phoneNumber.invalid &&
+  studentForm.controls.phoneNumber.touched){
+
+    <p style="color:red">
+
+      Phone number is required (minimum 10 characters)
+
+    </p>
+
+  }
+  <br><br>
+
+  <button
+    type="submit"
+
+    [disabled]="studentForm.invalid">
+
+    Register
+
+  </button>
+
+</form>

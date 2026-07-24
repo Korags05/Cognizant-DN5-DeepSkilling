@@ -2,14 +2,11 @@ import { Routes } from '@angular/router';
 import { Home } from './pages/home/home';
 import { CourseList } from './pages/course-list/course-list';
 
-export const routes: Routes = [
-  {
-    path: '',
-    component: Home,
-  },
+import { StudentForm } from './pages/student-form/student-form';
 
-  {
-    path: 'courses',
-    component: CourseList,
-  },
+export const routes: Routes = [
+  { path: '', component: Home },
+  { path: 'courses', component: CourseList },
+  { path: 'student-form', component: StudentForm }
 ];
+
