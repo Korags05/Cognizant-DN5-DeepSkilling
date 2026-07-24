@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { CourseCard } from '../../components/course-card/course-card';
 import { CommonModule } from '@angular/common';
 import { OnInit } from '@angular/core';
+import { inject } from '@angular/core';
+import { CourseService } from '../../services/course';
 
 @Component({
   selector: 'app-course-list',
@@ -10,47 +12,9 @@ import { OnInit } from '@angular/core';
   styleUrl: './course-list.css',
 })
 export class CourseList implements OnInit {
-  courses = [
-    {
-      id: 1,
-      name: 'Angular',
-      code: 'CS101',
-      credits: 4,
-      gradeStatus: 'passed',
-    },
+  private courseService = inject(CourseService);
 
-    {
-      id: 2,
-      name: 'Java',
-      code: 'CS102',
-      credits: 3,
-      gradeStatus: 'failed',
-    },
-
-    {
-      id: 3,
-      name: 'Spring Boot',
-      code: 'CS103',
-      credits: 4,
-      gradeStatus: 'pending',
-    },
-
-    {
-      id: 4,
-      name: 'Database',
-      code: 'CS104',
-      credits: 3,
-      gradeStatus: 'pending',
-    },
-
-    {
-      id: 5,
-      name: 'Operating System',
-      code: 'CS105',
-      credits: 4,
-      gradeStatus: 'pending',
-    },
-  ];
+  courses = this.courseService.getCourses();
 
   selectedCourseId = 0;
 
@@ -60,10 +24,25 @@ export class CourseList implements OnInit {
     this.selectedCourseId = id;
   }
   isLoading = true;
+  addDummyCourse() {
+    this.courseService.addCourse({
+      id: 10,
 
+      name: 'Docker',
+
+      code: 'CS200',
+
+      credits: 2,
+
+      gradeStatus: 'pending',
+    });
+  }
   ngOnInit() {
     setTimeout(() => {
       this.isLoading = false;
     }, 1500);
+  }
+  delete(id: number) {
+    this.courseService.deleteCourse(id);
   }
 }

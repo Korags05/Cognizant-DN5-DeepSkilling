@@ -28,4 +28,10 @@ export class CourseCard implements OnChanges {
   enroll() {
     this.enrollRequested.emit(this.course.id);
   }
+  @Output()
+  deleteRequested = new EventEmitter<number>();
+
+  deleteCourse() {
+    this.deleteRequested.emit(this.course.id);
+  }
 }

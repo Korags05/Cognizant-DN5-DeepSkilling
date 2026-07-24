@@ -3,17 +3,20 @@
 <p *ngIf="isLoading">
   Loading courses...
 </p>
+<button (click)="addDummyCourse()">
 
+  Add Dummy Course
+
+</button>
+
+<hr>
 <div *ngIf="!isLoading">
 
   <app-course-card
-
     *ngFor="let c of courses"
-
     [course]="c"
-
-    (enrollRequested)="onEnroll($event)">
-
+    (enrollRequested)="onEnroll($event)"
+    (deleteRequested)="delete($event)">
   </app-course-card>
 
 </div>
