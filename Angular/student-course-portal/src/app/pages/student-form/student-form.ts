@@ -18,24 +18,20 @@ export class StudentForm {
   });
 
   submit() {
-
-    if(this.studentForm.valid){
-
+    if (this.studentForm.valid) {
       alert(
-
         JSON.stringify(
-
           this.studentForm.value,
 
           null,
 
-          2
-
-        )
-
+          2,
+        ),
       );
-
     }
+  }
 
+  getPortalName() {
+    return 'Student Portal';
   }
 }

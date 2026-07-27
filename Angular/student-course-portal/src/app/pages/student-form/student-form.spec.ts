@@ -19,4 +19,8 @@ describe('StudentForm', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should return portal name', () => {
+    expect(component.getPortalName()).toBe('Student Portal');
+  });
 });
