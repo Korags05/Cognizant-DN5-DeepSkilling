@@ -10,4 +10,7 @@ export class Student {
   getStudents() {
     return this.http.get('https://jsonplaceholder.typicode.com/users');
   }
+  getPosts() {
+    return this.http.get('https://jsonplaceholder.typicode.com/posts');
+  }
 }

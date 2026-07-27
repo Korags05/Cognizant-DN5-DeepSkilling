@@ -1,0 +1,15 @@
+<h2>Posts</h2>
+
+@for(post of posts.slice(0,10);track post.id){
+
+  <div>
+
+    <h3>{{post.title}}</h3>
+
+    <p>{{post.body}}</p>
+
+    <hr>
+
+  </div>
+
+}
