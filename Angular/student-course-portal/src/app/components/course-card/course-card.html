@@ -1,4 +1,6 @@
-<h3>{{course.name}}</h3>
+<a [routerLink]="['/courses', course.id]">
+  {{course.name}}
+</a>
 
 <p>Code : {{course.code}}</p>
 

@@ -2,9 +2,11 @@ import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges } from
 import { CommonModule } from '@angular/common';
 import { Highlight } from '../../directives/highlight';
 import { CreditLabelPipe } from '../../pipes/credit-label-pipe';
+import { RouterLink } from '@angular/router';
+
 @Component({
   selector: 'app-course-card',
-  imports: [CommonModule, Highlight, CreditLabelPipe],
+  imports: [CommonModule, Highlight, CreditLabelPipe, RouterLink],
   templateUrl: './course-card.html',
   styleUrl: './course-card.css',
 })
