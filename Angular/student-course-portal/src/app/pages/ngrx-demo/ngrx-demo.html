@@ -1,0 +1,9 @@
+<button (click)="add()">
+  Add Course
+</button>
+
+@for(course of (courses$ | async); track course){
+
+  <p>{{course}}</p>
+
+}
